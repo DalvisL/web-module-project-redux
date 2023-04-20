@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import MovieListItem from './MovieListItem';
 import MovieFooter from './MovieFooter';
+import  { toggleFavorites } from '../actions/favoritesActions'
 
 const MovieList = (props)=> {
     const movies = [...props.movies];
@@ -33,8 +34,9 @@ const MovieList = (props)=> {
 
 const mapStateToProps = (state) => {
     return {
-        movies: state.movies
+        movies: state.movies.movies,
+        favorites: state.favorites.favorites
     }
 }
 
-export default connect(mapStateToProps, {}) (MovieList);
+export default connect(mapStateToProps, { toggleFavorites }) (MovieList);

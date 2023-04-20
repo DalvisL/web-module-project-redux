@@ -12,7 +12,8 @@ const AddMovieForm = (props) => {
         director: "",
         genre: "",
         metascore: 0,
-        description:""
+        description:"",
+        id: Date.now()
     });
 
     const handleChange = (e) => {
@@ -72,7 +73,7 @@ const AddMovieForm = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        movies: state.movies
+        movies: state.movies.movies
     }
 }
 
